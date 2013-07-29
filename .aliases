@@ -32,9 +32,9 @@ alias shutdown="poweroff"
 #───────────────────────────────────────────────────────────────────────────────
 alias ls="command ls --color"
 alias lsd='ls -l --color | grep "^d"'
-alias lh='ls -alt | head' # see the last modified files
+alias lh='ls -alt | head'
 alias ll='ls -lGh'
-alias lp='ls -lGha | less -R'
+alias lp='ls -alth | less -R'
 alias tree="tree --dirsfirst -Cha"
 
 
