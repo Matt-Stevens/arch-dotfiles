@@ -39,4 +39,9 @@ export LANG="en_GB"
 #───────────────────────────────────────────────────────────────────────────────
 [ -f ~/.shell/git-prompt.sh ] && . ~/.shell/git-prompt.sh
 
+#───────────────────────────────────────────────────────────────────────────────
+# Source bash completion for Git
+#───────────────────────────────────────────────────────────────────────────────
+[ -f /usr/share/git/completion/git-completion.bash ] && . /usr/share/git/completion/git-completion.bash
+
 # vim:ft=sh
