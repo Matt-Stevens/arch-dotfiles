@@ -5,6 +5,7 @@
 [alias]
     go = checkout -B
     s  = status -s
+    pl = pull --rebase
     st = status
     rb = rebase
     ci = commit
