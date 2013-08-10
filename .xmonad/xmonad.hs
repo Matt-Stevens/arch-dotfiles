@@ -11,10 +11,11 @@ import qualified Data.Map        as M
 
 import XMonad.Hooks.EwmhDesktops
 
--- The preferred terminal program, which is used in a binding below and by
--- certain contrib modules.
+-- The preferred programs, which are used in bindings below and by certain
+-- contrib modules.
 --
 myTerminal      = "terminator"
+myBrowser       = "chromium"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -61,6 +62,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
+
+    -- launch browser (think "surf")
+    , ((modm,               xK_s     ), spawn myBrowser)
 
     -- launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
