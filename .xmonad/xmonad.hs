@@ -16,6 +16,7 @@ import XMonad.Hooks.EwmhDesktops
 --
 myTerminal      = "terminator"
 myBrowser       = "chromium"
+myEditor        = "gvim"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -65,6 +66,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch browser (think "surf")
     , ((modm,               xK_s     ), spawn myBrowser)
+
+    -- launch Vim (graphical version)
+    , ((modm,               xK_g     ), spawn myEditor)
 
     -- launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
