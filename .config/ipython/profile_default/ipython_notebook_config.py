@@ -571,4 +571,4 @@ c = get_config()
 # c.FileNotebookManager.save_script = False
 
 # The directory to use for notebooks.
-# c.FileNotebookManager.notebook_dir = u'/home/matt'
+c.FileNotebookManager.notebook_dir = u'/home/matt/ipython-notebooks'
