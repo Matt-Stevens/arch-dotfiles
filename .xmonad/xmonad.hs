@@ -70,6 +70,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch incognito browser (think shift + "surf")
     , ((modm .|. shiftMask, xK_s     ), spawn $ myBrowser ++ " --incognito")
 
+    -- launch firefox with white noise
+    , ((modm,               xK_z     ), spawn "firefox http://simplynoise.com")
+
     -- launch Vim (graphical version)
     , ((modm,               xK_g     ), spawn myEditor)
 
