@@ -93,8 +93,8 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 # Shortcuts for networking
 #───────────────────────────────────────────────────────────────────────────────
 alias gurl="curl --compressed"
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en1"
+alias remoteip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="command ip addr show eth0 | grep --color=never -Po '([0-9]{1,3}\.){3}[0-9]{1,3}(?=/)'"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
 alias whois="whois -h whois-servers.net"
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
