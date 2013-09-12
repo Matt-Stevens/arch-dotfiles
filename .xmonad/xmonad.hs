@@ -4,6 +4,8 @@
 
 import XMonad
 import Data.Monoid
+import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.ManageDocks
 import System.Exit
 
 import qualified XMonad.StackSet as W
@@ -46,7 +48,7 @@ myModMask       = mod1Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
+myWorkspaces    = ["web", "development", "music", "4", "5", "6", "7", "8", "9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -130,11 +132,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Deincrement the number of windows in the master area
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
 
-    -- Toggle the status bar gap
+    -- Toggle the status bar gap (think 'info')
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
     -- See also the statusBar function from Hooks.DynamicLog.
     --
-    -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
+    -- , ((modm              , xK_i     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
