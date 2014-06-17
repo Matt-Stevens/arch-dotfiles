@@ -3,3 +3,7 @@
 Desktop.ini
 ._*
 Thumbs.db
+
+# All xmonad files, except the config
+.xmonad/
+!.xmonad/xmonad.hs
