@@ -19,6 +19,8 @@ xset fp rehash
 # activate numlock
 numlockx &
 
+feh --bg-scale ~/media/images/wallpapers/Eos_left.bmp ~/media/images/wallpapers/Eos_right.bmp
+
 exec xmonad
 # exec openbox-session
 # exec gnome-session
