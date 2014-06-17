@@ -13,9 +13,8 @@ fi
 
 xsetroot -cursor_name left_ptr
 
-if xrandr -q | grep -q "DVI-1 connected"; then
-  xrandr --output DVI-0 --primary --left-of DVI-1 --output DVI-1 --auto
-fi
+xset +fp /usr/share/fonts/local
+xset fp rehash
 
 nitrogen --restore
 
