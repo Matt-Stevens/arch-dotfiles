@@ -37,11 +37,6 @@ export LANG="en_GB"
 #───────────────────────────────────────────────────────────────────────────────
 # Source the functions required for a prompt containing the current Git status
 #───────────────────────────────────────────────────────────────────────────────
-[ -f ~/.shell/git-prompt.sh ] && . ~/.shell/git-prompt.sh
-
-#───────────────────────────────────────────────────────────────────────────────
-# Source bash completion for Git
-#───────────────────────────────────────────────────────────────────────────────
-[ -f /usr/share/git/completion/git-completion.bash ] && . /usr/share/git/completion/git-completion.bash
+[ -f /usr/share/git/git-prompt.sh ] && . /usr/share/git/git-prompt.sh
 
 # vim:ft=sh
