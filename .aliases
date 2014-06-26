@@ -3,9 +3,6 @@
 #───────────────────────────────────────────────────────────────────────────────
 alias cd="venv_cd"
 alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
 alias -- -="cd -"
 
 
@@ -55,17 +52,9 @@ alias tree="tree --dirsfirst -Cha"
 #───────────────────────────────────────────────────────────────────────────────
 # Shortcuts for general tasks
 #───────────────────────────────────────────────────────────────────────────────
-alias s="sudo "
-alias g="git"
-alias h="history"
-alias j="jobs"
-alias v="vim"
-alias psa="ps aux"
 alias psg="ps aux | grep "
 alias less='less -R'
 alias tf='tail -f'
-alias l='less'
-alias cl='clear'
 alias gz='tar -zcvf'
 alias ex='extract'
 alias grep='grep --color=always'
