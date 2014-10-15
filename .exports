@@ -19,9 +19,10 @@ export LESS_TERMCAP_md="$BOLD$ORANGE"
 #───────────────────────────────────────────────────────────────────────────────
 # Make the bash history a lot bigger
 #───────────────────────────────────────────────────────────────────────────────
-unset HISTFILESIZE
-export HISTSIZE=500000
-export HISTCONTROL="ignoreboth"
+export HISTSIZE=5000
+export HISTFILESIZE="$HISTSIZE"
+export HISTCONTROL=ignoreboth:ignoredups
+export PROMPT_COMMAND="history -a; history -n"
 
 
 #───────────────────────────────────────────────────────────────────────────────
