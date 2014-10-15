@@ -17,12 +17,13 @@ export LESS_TERMCAP_md="$BOLD$ORANGE"
 
 
 #───────────────────────────────────────────────────────────────────────────────
-# Make the bash history a lot bigger
+# Make the bash history eternal
 #───────────────────────────────────────────────────────────────────────────────
-export HISTSIZE=5000
-export HISTFILESIZE="$HISTSIZE"
+export HISTFILESIZE=
+export HISTSIZE=
 export HISTCONTROL=ignoreboth:ignoredups
-export PROMPT_COMMAND="history -a; history -n"
+# Save and reload the history after each command finishes
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 
 #───────────────────────────────────────────────────────────────────────────────
