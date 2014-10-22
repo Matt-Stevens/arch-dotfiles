@@ -58,7 +58,6 @@
 " Appearance {{{
     set t_Co=256                " Enable full colour within the terminal
     colorscheme smyck           " Other options: molokai, solarized
-    set background=dark         " We are using dark background in vim
     set guioptions-=T           " Remove shortcut icons
     set guioptions-=r           " Remove scrollbar
     set guioptions-=L           " Remove left scrollbar
