@@ -107,8 +107,8 @@
     set foldlevelstart=20       " Don't fold by default
 
     " Automatically fold vim configuration files
-    autocmd Syntax vim setlocal foldmethod=marker
-    autocmd Syntax vim normal zM
+    autocmd FileType vim setlocal foldmethod=marker
+    autocmd FileType vim normal zM
 " }}}
 
 " Disable {{{
