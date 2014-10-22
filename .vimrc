@@ -62,7 +62,6 @@
     set guioptions-=r           " Remove scrollbar
     set guioptions-=L           " Remove left scrollbar
     set guioptions-=m           " Remove top menu
-    set showmode                " Indicate what mode we're in in the status bar
     set title                   " Show title in console title bar
     set cursorline              " Display a horizontal line at the cursor position
     set report=0                " Always print changed line count
