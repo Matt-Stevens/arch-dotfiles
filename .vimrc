@@ -4,7 +4,7 @@
 " }}}
 
 " Runtime Paths {{{
-    set runtimepath+=~/.vim/bundle/vundle/
+    set runtimepath+=~/.vim/bundle/Vundle.vim
     set runtimepath+=~/.vim/bundle/ctrlp.vim
 
     if has('gui_running')
@@ -13,32 +13,33 @@
 " }}}
 
 " Plugins {{{
-    call vundle#rc()
-    Bundle 'gmarik/vundle'
-    Bundle 'tpope/vim-surround'
-    Bundle 'tpope/vim-repeat'
-    Bundle 'tpope/vim-unimpaired'
-    Bundle 'tpope/vim-fugitive'
-    Bundle 'tpope/vim-commentary'
-    Bundle 'Lokaltog/vim-easymotion'
-    Bundle 'scrooloose/nerdtree'
-    Bundle 'scrooloose/nerdcommenter'
-    Bundle 'vim-scripts/Colour-Sampler-Pack'
-    Bundle 'mattn/zencoding-vim'
-    Bundle 'evanmiller/nginx-vim-syntax'
-    Bundle 'kien/ctrlp.vim'
-    Bundle 'altercation/vim-colors-solarized'
-    Bundle 'Matt-Stevens/Smyck-Color-Scheme'
-    Bundle 'klen/python-mode'
-    Bundle 'MarcWeber/vim-addon-mw-utils'
-    Bundle 'tomtom/tlib_vim'
-    Bundle 'garbas/vim-snipmate'
-    Bundle 'honza/vim-snippets'
-    Bundle 'Matt-Stevens/vim-systemd-syntax'
+    call vundle#begin()
+    Plugin 'gmarik/vundle'
+    Plugin 'tpope/vim-surround'
+    Plugin 'tpope/vim-repeat'
+    Plugin 'tpope/vim-unimpaired'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'tpope/vim-commentary'
+    Plugin 'Lokaltog/vim-easymotion'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'scrooloose/nerdcommenter'
+    Plugin 'vim-scripts/Colour-Sampler-Pack'
+    Plugin 'mattn/zencoding-vim'
+    Plugin 'evanmiller/nginx-vim-syntax'
+    Plugin 'kien/ctrlp.vim'
+    Plugin 'altercation/vim-colors-solarized'
+    Plugin 'Matt-Stevens/Smyck-Color-Scheme'
+    Plugin 'klen/python-mode'
+    Plugin 'MarcWeber/vim-addon-mw-utils'
+    Plugin 'tomtom/tlib_vim'
+    Plugin 'garbas/vim-snipmate'
+    Plugin 'honza/vim-snippets'
+    Plugin 'Matt-Stevens/vim-systemd-syntax'
 
     if has('gui_running')
-        Bundle 'Lokaltog/powerline'
+        Plugin 'Lokaltog/powerline'
     endif
+    call vundle#end()
 " }}}
 
 " General {{{
