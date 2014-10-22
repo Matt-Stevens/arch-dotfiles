@@ -1,7 +1,6 @@
 " Essential {{{
     set nocompatible            " Modernise
     filetype off                " Required by Vundle
-    let mapleader=","           " Change mapleader
 " }}}
 
 " Runtime Paths {{{
