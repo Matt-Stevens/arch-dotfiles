@@ -1,3 +1,19 @@
+" Installation instructions for Arch Linux:
+"
+"    1. Download this file and save it to `~/.vimrc`
+"
+"    2. Install Vim
+"        $ pacman -S gvim-python3
+"
+"    3. Install `python-powerline-git` from the AUR
+"
+"    4. Install Vundle
+"        $ git clone http://git.io/b51VEw ~/.vim/bundle/Vundle.vim
+"
+"    5. Install Vundle plugins
+"        $ vim +PluginInstall +qall
+"
+
 " Essential {{{
     set nocompatible            " Modernise
     filetype off                " Required by Vundle
@@ -5,40 +21,18 @@
 
 " Runtime Paths {{{
     set runtimepath+=~/.vim/bundle/Vundle.vim
-    set runtimepath+=~/.vim/bundle/ctrlp.vim
-
-    if has('gui_running')
-        set runtimepath+=~/.vim/bundle/powerline/powerline/bindings/vim
-    endif
 " }}}
 
 " Plugins {{{
     call vundle#begin()
-    Plugin 'gmarik/vundle'
-    Plugin 'tpope/vim-surround'
-    Plugin 'tpope/vim-repeat'
-    Plugin 'tpope/vim-unimpaired'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'tpope/vim-commentary'
-    Plugin 'Lokaltog/vim-easymotion'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'scrooloose/nerdcommenter'
-    Plugin 'vim-scripts/Colour-Sampler-Pack'
-    Plugin 'mattn/zencoding-vim'
-    Plugin 'evanmiller/nginx-vim-syntax'
+    Plugin 'flazz/vim-colorschemes'
     Plugin 'kien/ctrlp.vim'
-    Plugin 'altercation/vim-colors-solarized'
-    Plugin 'Matt-Stevens/Smyck-Color-Scheme'
-    Plugin 'klen/python-mode'
-    Plugin 'MarcWeber/vim-addon-mw-utils'
-    Plugin 'tomtom/tlib_vim'
-    Plugin 'garbas/vim-snipmate'
-    Plugin 'honza/vim-snippets'
-    Plugin 'Matt-Stevens/vim-systemd-syntax'
-
-    if has('gui_running')
-        Plugin 'Lokaltog/powerline'
-    endif
+    Plugin 'ntpeters/vim-better-whitespace'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'tpope/vim-commentary'
+    Plugin 'tpope/vim-repeat'
+    Plugin 'tpope/vim-surround'
+    Plugin 'vim-scripts/restore_view.vim'
     call vundle#end()
 " }}}
 
@@ -46,69 +40,63 @@
     syntax on                   " Syntax highlighting
     filetype plugin indent on   " Enable detection of filetype
     set wildmenu                " Menu completion in command mode on <Tab>
-    set wildmode=full           " <Tab> cycles between all matching choices.
-    set modeline                " Enable modelines
-    set noswapfile              " No messy swap files
+    set noswapfile              " No messy swap files (this is also more secure)
     set history=2000            " Remember more Ex-Commands
 
     " ignore
-    set wildignore+=*.swp,*.bak,.svn,.git,*.jpg,*.gif,*.png,*.pyc
+    set wildignore+=*.swp,*.bak,.git,*.jpg,*.gif,*.png,*.pyc,*.pdf,*.zip,*.gz
 " }}}
 
 " Appearance {{{
     set t_Co=256                " Enable full colour within the terminal
-    colorscheme smyck           " Other options: molokai, solarized
-    set guioptions-=T           " Remove shortcut icons
-    set guioptions-=r           " Remove scrollbar
+    set colorcolumn=100         " Add a red line at 100 chars (not quite PEP 8, but it's 2014)
+    colorscheme molokai         " Other options: Monokai, solarized
+    set cursorline              " Display a horizontal line at the cursor position
+    set laststatus=2            " Always show statusline, even if only a single window
     set guioptions-=L           " Remove left scrollbar
     set guioptions-=m           " Remove top menu
-    set title                   " Show title in console title bar
-    set cursorline              " Display a horizontal line at the cursor position
-    set report=0                " Always print changed line count
-    set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written
-    set laststatus=2            " Always show statusline, even if only 1 window
-    set colorcolumn=100         " Add a red line at 100 chars (not quite PEP 8, but it's 2013)
+    set guioptions-=r           " Remove scrollbar
+    set guioptions-=T           " Remove shortcut icons
+    set guifont=Inconsolata\ For\ Powerline\ Medium\ 14
 " }}}
 
 " Searching {{{
+    set gdefault                " Assume the /g flag on :s substitutions
     set hlsearch                " Highlight search matches
-    set incsearch               " Incrementally search while typing a /regex
     set ignorecase              " Default to using case insensitive searches,
+    set incsearch               " Incrementally search while typing a /regex
     set smartcase               " Unless uppercase letters are used in the regex
     set smarttab                " Handle tabs more intelligently
-    set gdefault                " Assume the /g flag on :s substitutions
 " }}}
 
-" Moving {{{
+" Movement {{{
     set relativenumber          " Relative line numbers
+    set number                  " Enable 'hybrid' line number mode
     set scrolloff=5             " Begin scrolling before cursor hits the top/bottom
     set sidescrolloff=20        " Begin scrolling before cursor hits the right hand side
 " }}}
 
 " Git Commit Editing {{{
-    " Add a red line at 72 chars, keeping commit messages
-    " short n' sweet. Also turn on spell checking
-    autocmd Filetype gitcommit setlocal textwidth=72 colorcolumn=72 spell
+    " Add a red line at 72 chars, keeping commit messages short n' sweet and turn on spellcheck.
+    autocmd FileType gitcommit setlocal textwidth=72 colorcolumn=72 spell
 " }}}
 
 " Editing {{{
-    set nowrap                  " Disable text wrapping
-    set tabstop=4               " A tab is four spaces, not eight (the default)
+    set confirm                 " Y-N-C prompt if closing with unsaved changes
     set expandtab               " Convert tabs to tabstop * spaces
+    set nowrap                  " Disable text wrapping
     set shiftwidth=4            " How much to indent with '>>'
     set softtabstop=4           " Should be the same as 'tabstop'
-    set confirm                 " Y-N-C prompt if closing with unsaved changes
-    set showcmd                 " Show incomplete normal mode commands as I type
     set spelllang=en_gb         " Set region to British English
+    set tabstop=4               " A tab is four spaces, not eight (the default)
 " }}}
 
-" Folding  {{{
+" Folding {{{
     set foldmethod=indent       " Allow us to fold on indents
     set foldlevelstart=20       " Don't fold by default
 
-    " Automatically fold vim configuration files
+    " Fold Vim configuration files
     autocmd FileType vim setlocal foldmethod=marker
-    autocmd FileType vim normal zM
 " }}}
 
 " Disable {{{
@@ -124,52 +112,36 @@
     imap <Left>  <Nop>
     imap <Right> <Nop>
 
-    " Use 'jk' or 'jj' instead of Escape
+    " Disable the backspace bar (use '^w')
+    inoremap <BS> <Nop>
+
+    " Disable the return key (use 'o')
+    inoremap <CR> <Nop>
+
+    " Use 'jj' instead of Escape
     inoremap <Esc> <Nop>
 
-    " Never need undo in visual mode, always accidentally hitting it though
+    " Never needed undo in visual mode, always accidentally hitting it
     vnoremap u <Nop>
 " }}}
 
-" No GUI {{{
-    if ! has('gui_running')
-        set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
-        colorscheme molokai
-        let g:NERDTreeDirArrows=0
-
-        " Move Powerline out of insert mode, fast
-        augroup FastEscape
-            autocmd!
-            au InsertEnter * set ttimeoutlen=1
-            au InsertLeave * set ttimeoutlen=-1
-        augroup END
-    endif
-" }}}
-
 " Remappings and Shortcuts {{{
-    " Quickly get out of insert mode (either use 'jj' or 'jk')
+    " Quickly get out of insert mode
     inoremap jj <Esc>
-    inoremap jk <Esc>
 
     " Phat fingers yo'
-    noremap ` <Esc>
     noremap <F1> <Esc>
 
-    " Improve movement on wrapped lines
+    " Improve movement on wrapped lines (when wrapping is enabled)
     nnoremap j gj
     nnoremap k gk
 
     " Quick yanking to the end of the line
     nnoremap Y y$
 
-    " Toggle paste (pastetoggle doesn't redraw the screen)
-    nnoremap <F2> :set paste!<CR>
-
-    " F5 strips trailing whitespace
-    nnoremap <silent> <F5> :call StripTrailingWhitespace()<CR>
-
-    " Allow backspace over everything in insert mode
-    set backspace=eol,start,indent
+   " Space to toggle folds
+    nnoremap <Space> za
+    vnoremap <Space> za
 
     " Ctrl+[jklm] to navigate splits
     map <C-j> <C-w>j
@@ -177,12 +149,17 @@
     map <C-l> <C-w>l
     map <C-h> <C-w>h
 
-    " Clear the search buffer when ./ is pressed
+    " Clear the search buffer
     nmap <silent> ,/ :nohlsearch<CR>
 
-    " Ctrlp fuzzy file and buffer search
-    map <C-p> <Esc>:ctrlp<CR>
-    map <C-o> <Esc>:ctrlpbuffer<CR>
+    " F2 toggles paste mode
+    nnoremap <silent> <F2> :set paste!<CR>
+
+    " F4 toggles spell checking
+    nnoremap <silent> <F4> :set spell!<CR>
+
+    " F5 strips trailing white space
+    nnoremap <silent> <F5> :StripWhitespace<CR>
 
     " Reselect visual block after indent/outdent
     vnoremap < <gv
@@ -195,88 +172,25 @@
     nnoremap / /\v
     vnoremap / /\v
 
-    " Paste from the Linux clipboard
-    nnoremap <C-Q> "+gP
-
-    " Safe aliases the capital Q and W
-    cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q'))
-    cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
-
     " Keep search matches in the middle of the window
     nnoremap n nzzzv
     nnoremap N Nzzzv
 
-   " Space to toggle folds
-    nnoremap <Space> za
-    vnoremap <Space> za
-
-    " Easy filetype switching
-    nnoremap _md :set ft=markdown<CR>
-    nnoremap _hd :set ft=htmldjango<CR>
-    nnoremap _js :set ft=javascript<CR>
-    nnoremap _pd :set ft=python.django<CR>
-    nnoremap _d  :set ft=diff<CR>
-
     " Select current line excluding indentation
     nnoremap vv ^vg_
 
-    " Backwards and forwards through command and search history
-    cnoremap <C-p> <Up>
-    cnoremap <C-n> <Down>
+    " Allow saving of files as root
+    cmap w!! w !sudo tee > /dev/null %
+" }}}
 
-    " Toggle spell checking on and off
-    nnoremap <silent> <F4> :set spell!<CR>
+" Auto commands {{{
+    " Remove trailing white space just before saving
+    autocmd BufWritePre * :StripWhitespace
 " }}}
 
 " Behaviour {{{
     set noerrorbells            " Shut those bells up
     set novisualbell            " The same goes for visual bells
-" }}}
-
-" NERD Tree {{{
-    " Change to the directory of the file being opened
-    autocmd BufEnter ?* silent! lcd %:p:h
-
-    " Ignore Python binaries
-    let NERDTreeIgnore = ['\.pyc$']
-
-    " Close Vim if NERD Tree is the only window open
-    autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-
-    " Start NERD Tree on startup
-    autocmd VimEnter * NERDTree
-
-    " Enter the right window on startup
-    autocmd VimEnter * wincmd p
-
-    function! s:CloseIfOnlyNerdTreeLeft()
-        if tabpagenr('$') == 1 && winnr('$') == 1
-            q
-        endif
-    endfunction
-" }}}
-
-" Trailing Whitespace {{{
-    " Run this when saving files with these extensions
-    autocmd BufWritePre *.py,*.js,*.css,*.scss,*.sass :call StripTrailingWhitespace()
-
-    " Highlight trailing whitespace
-    highlight ExtraWhitespace ctermbg=red guibg=red
-    match ExtraWhitespace /\s\+$/
-    autocmd BufWinEnter ?* match ExtraWhitespace /\s\+$/
-    autocmd InsertEnter ?* match ExtraWhitespace /\s\+\%#\@<!$/
-    autocmd InsertLeave ?* match ExtraWhitespace /\s\+$/
-    autocmd BufWinLeave ?* call clearmatches()
-
-    " Remove trailing whitespace
-    function! StripTrailingWhitespace()
-        let _s=@/
-        let l = line(".")
-        let c = col(".")
-        %s/\s\+$//e
-        let @/=_s
-        call cursor(l, c)
-    endfunction
 " }}}
 
 " Cursorline {{{
@@ -288,23 +202,24 @@
     augroup END
 " }}}
 
-" Remember Information {{{
-    " Remember previous folds (the conditional is necessary due to a bug in Vundle)
-    au BufWinLeave ?* if &modifiable | silent mkview | endif
-    au BufWinEnter ?* if &modifiable | silent loadview | endif
+" NERDTree {{{
+    " Change to the directory of the file being opened
+    autocmd BufEnter ?* silent! lcd %:p:h
 
-    " Remember cursor position
-    set viminfo='10,\"100,:20,%,n~/.viminfo
+    " Start NERD Tree on startup
+    autocmd VimEnter * NERDTree
 
-    function! ResCur()
-      if line("'\"") <= line("$")
-        normal! g`"
-        return 1
-      endif
+    " Enter the right window on startup
+    autocmd VimEnter * wincmd p
+
+    " Close Vim if NERD Tree is the only window open
+    autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+
+    function! s:CloseIfOnlyNerdTreeLeft()
+        if tabpagenr('$') == 1 && winnr('$') == 1
+            q
+        endif
     endfunction
-
-    augroup resCur
-      autocmd!
-      autocmd BufWinEnter ?* call ResCur()
-    augroup END
 " }}}
+
+" vim:ft=vim
