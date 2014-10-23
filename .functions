@@ -299,6 +299,14 @@ list-archive () {
 
 
 #───────────────────────────────────────────────────────────────────────────────
+# stopped-jobs: return the number of jobs currently running
+#───────────────────────────────────────────────────────────────────────────────
+stopped-jobs () {
+    jobs -s | wc -l | sed -e "s/ //g"
+}
+
+
+#───────────────────────────────────────────────────────────────────────────────
 # git-play: a ‘Read-eval-print-loop’ shell to quickly setup various scenarios in
 #           a Git repository, handy for learning the more advanced parts of Git
 #───────────────────────────────────────────────────────────────────────────────
