@@ -17,20 +17,27 @@
 " Essential {{{
     set nocompatible            " Modernise
     filetype off                " Required by Vundle
+    let mapleader = "\<Space>"  " Override mapleader
 " }}}
 
 " Runtime Paths {{{
     set runtimepath+=~/.vim/bundle/Vundle.vim
 " }}}
-
 " Plugins {{{
     call vundle#begin()
+    Plugin 'bps/vim-textobj-python'
+    Plugin 'davidhalter/jedi-vim'
     Plugin 'flazz/vim-colorschemes'
+    Plugin 'kana/vim-textobj-user'
     Plugin 'kien/ctrlp.vim'
+    Plugin 'mileszs/ack.vim'
     Plugin 'ntpeters/vim-better-whitespace'
     Plugin 'scrooloose/nerdtree'
+    Plugin 'terryma/vim-expand-region'
     Plugin 'tpope/vim-commentary'
+    Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-repeat'
+    Plugin 'tpope/vim-speeddating'
     Plugin 'tpope/vim-surround'
     Plugin 'vim-scripts/restore_view.vim'
     call vundle#end()
@@ -48,9 +55,9 @@
 " }}}
 
 " Appearance {{{
+    colorscheme Tomorrow-Night  " Other options: Monokai, Gotham, Chasing-Logic
     set t_Co=256                " Enable full colour within the terminal
     set colorcolumn=100         " Add a red line at 100 chars (not quite PEP 8, but it's 2014)
-    colorscheme molokai         " Other options: Monokai, solarized
     set cursorline              " Display a horizontal line at the cursor position
     set laststatus=2            " Always show statusline, even if only a single window
     set guioptions-=L           " Remove left scrollbar
@@ -115,9 +122,6 @@
     " Disable the backspace bar (use '^w')
     inoremap <BS> <Nop>
 
-    " Disable the return key (use 'o')
-    inoremap <CR> <Nop>
-
     " Use 'jj' instead of Escape
     inoremap <Esc> <Nop>
 
@@ -126,8 +130,34 @@
 " }}}
 
 " Remappings and Shortcuts {{{
+    " Open a new file
+    nnoremap <Leader>o :CtrlP<CR>
+
+    " Save file
+    nnoremap <Leader>w :w<CR>
+
+    " Search buffers
+    nnoremap <Leader>b :CtrlPBuffer<CR>
+
+    " System clipboard access
+    vmap <Leader>y "+y
+    vmap <Leader>d "+d
+    nmap <Leader>p "+p
+    nmap <Leader>P "+P
+    vmap <Leader>p "+p
+    vmap <Leader>P "+P
+
+    " Jump to the end of pasted lines
+    vnoremap <silent> y y`]
+    vnoremap <silent> p p`]
+    nnoremap <silent> p p`]
+
     " Quickly get out of insert mode
     inoremap jj <Esc>
+
+    " Expand region
+    vmap v <Plug>(expand_region_expand)
+    vmap <C-v> <Plug>(expand_region_shrink)
 
     " Phat fingers yo'
     noremap <F1> <Esc>
@@ -140,8 +170,8 @@
     nnoremap Y y$
 
    " Space to toggle folds
-    nnoremap <Space> za
-    vnoremap <Space> za
+    nnoremap \ za
+    vnoremap \ za
 
     " Ctrl+[jklm] to navigate splits
     map <C-j> <C-w>j
@@ -149,8 +179,16 @@
     map <C-l> <C-w>l
     map <C-h> <C-w>h
 
+    " Jump to the beginning and end of the file
+    nnoremap <CR> G
+    nnoremap <BS> gg
+
     " Clear the search buffer
     nmap <silent> ,/ :nohlsearch<CR>
+
+    " Cycle through buffers
+    nnoremap <Tab> :bnext<CR>
+    nnoremap <S-Tab> :bprevious<CR>
 
     " F2 toggles paste mode
     nnoremap <silent> <F2> :set paste!<CR>
