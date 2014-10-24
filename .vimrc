@@ -23,6 +23,7 @@
 " Runtime Paths {{{
     set runtimepath+=~/.vim/bundle/Vundle.vim
 " }}}
+
 " Plugins {{{
     call vundle#begin()
     Plugin 'bps/vim-textobj-python'
@@ -156,11 +157,8 @@
     inoremap jj <Esc>
 
     " Expand region
-    vmap v <Plug>(expand_region_expand)
-    vmap <C-v> <Plug>(expand_region_shrink)
-
-    " Phat fingers yo'
-    noremap <F1> <Esc>
+"    vmap v <Plug>(expand_region_expand)
+"    vmap <C-v> <Plug>(expand_region_shrink)
 
     " Improve movement on wrapped lines (when wrapping is enabled)
     nnoremap j gj
@@ -168,10 +166,6 @@
 
     " Quick yanking to the end of the line
     nnoremap Y y$
-
-   " Space to toggle folds
-    nnoremap \ za
-    vnoremap \ za
 
     " Ctrl+[jklm] to navigate splits
     map <C-j> <C-w>j
@@ -189,6 +183,10 @@
     " Cycle through buffers
     nnoremap <Tab> :bnext<CR>
     nnoremap <S-Tab> :bprevious<CR>
+
+   " F1 toggles folds
+    nnoremap <F1> za
+    vnoremap <F1> za
 
     " F2 toggles paste mode
     nnoremap <silent> <F2> :set paste!<CR>
@@ -215,7 +213,7 @@
     nnoremap N Nzzzv
 
     " Select current line excluding indentation
-    nnoremap vv ^vg_
+    nnoremap <Leader>v ^vg_
 
     " Allow saving of files as root
     cmap w!! w !sudo tee > /dev/null %
