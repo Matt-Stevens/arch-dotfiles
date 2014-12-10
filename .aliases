@@ -58,6 +58,7 @@ alias tree="tree --dirsfirst -Cha"
 #───────────────────────────────────────────────────────────────────────────────
 # Shortcuts for general tasks
 #───────────────────────────────────────────────────────────────────────────────
+alias w="aria2c"
 alias psg="ps aux | grep "
 alias less='less -R'
 alias tf='tail -f'
