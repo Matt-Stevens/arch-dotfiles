@@ -58,6 +58,8 @@ alias tree="tree --dirsfirst -Cha"
 #───────────────────────────────────────────────────────────────────────────────
 # Shortcuts for general tasks
 #───────────────────────────────────────────────────────────────────────────────
+alias mute='amixer set Master mute'
+alias unmute='amixer set Master unmute'
 alias w="aria2c"
 alias psg="ps aux | grep "
 alias less='less -R'
