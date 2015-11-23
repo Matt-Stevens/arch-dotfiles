@@ -33,7 +33,6 @@
     Plugin 'kien/ctrlp.vim'
     Plugin 'mileszs/ack.vim'
     Plugin 'ntpeters/vim-better-whitespace'
-    Plugin 'scrooloose/nerdtree'
     Plugin 'terryma/vim-expand-region'
     Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-fugitive'
@@ -236,26 +235,6 @@
         autocmd WinLeave * set nocursorline
         autocmd VimEnter,WinEnter * set cursorline
     augroup END
-" }}}
-
-" NERDTree {{{
-    " Change to the directory of the file being opened
-    autocmd BufEnter ?* silent! lcd %:p:h
-
-    " Start NERD Tree on startup
-    autocmd VimEnter * NERDTree
-
-    " Enter the right window on startup
-    autocmd VimEnter * wincmd p
-
-    " Close Vim if NERD Tree is the only window open
-    autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-
-    function! s:CloseIfOnlyNerdTreeLeft()
-        if tabpagenr('$') == 1 && winnr('$') == 1
-            q
-        endif
-    endfunction
 " }}}
 
 " vim:ft=vim
