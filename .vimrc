@@ -189,7 +189,7 @@
     nnoremap <Tab> :bnext<CR>
     nnoremap <S-Tab> :bprevious<CR>
 
-   " F1 toggles folds
+    " F1 toggles folds
     nnoremap <F1> za
     vnoremap <F1> za
 
@@ -229,6 +229,14 @@
     autocmd BufWritePre * :StripWhitespace
 " }}}
 
+" Python {{{
+    " Ignore line length
+    let g:syntastic_python_flake8_args='--ignore=E501'
+
+    " Disable the isort key combination, use the explicity ':Isort' instead
+"    let g:vim_isort_map = ''
+" }}}
+"
 " Behaviour {{{
     set noerrorbells            " Shut those bells up
     set novisualbell            " The same goes for visual bells
