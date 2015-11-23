@@ -4,8 +4,6 @@
 
 import XMonad
 import Data.Monoid
-import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.ManageDocks
 import System.Exit
 
 import qualified XMonad.StackSet as W
@@ -48,7 +46,7 @@ myModMask       = mod1Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["web", "development", "music", "4", "5", "6", "7", "8", "9"]
+myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -238,7 +236,7 @@ myManageHook = composeAll
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
-myEventHook = fullscreenEventHook
+myEventHook = mempty
 
 ------------------------------------------------------------------------
 -- Status bars and logging
@@ -289,7 +287,7 @@ defaults = defaultConfig {
       -- hooks, layouts
         layoutHook         = myLayout,
         manageHook         = myManageHook,
-        handleEventHook    = myEventHook,
+        handleEventHook    = fullscreenEventHook,
         logHook            = myLogHook,
         startupHook        = myStartupHook
     }
