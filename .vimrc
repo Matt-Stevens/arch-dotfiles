@@ -28,17 +28,23 @@
     call vundle#begin()
     Plugin 'bps/vim-textobj-python'
     Plugin 'davidhalter/jedi-vim'
+    Plugin 'fisadev/vim-isort'
     Plugin 'flazz/vim-colorschemes'
+    Plugin 'hail2u/vim-css3-syntax'
+    Plugin 'jamessan/vim-gnupg'
     Plugin 'kana/vim-textobj-user'
     Plugin 'kien/ctrlp.vim'
+    Plugin 'Matt-Deacalion/vim-systemd-syntax'
     Plugin 'mileszs/ack.vim'
     Plugin 'ntpeters/vim-better-whitespace'
+    Plugin 'scrooloose/syntastic'
     Plugin 'terryma/vim-expand-region'
     Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-repeat'
     Plugin 'tpope/vim-speeddating'
     Plugin 'tpope/vim-surround'
+    Plugin 'tpope/vim-unimpaired'
     Plugin 'vim-scripts/restore_view.vim'
     call vundle#end()
 " }}}
