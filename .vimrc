@@ -229,6 +229,8 @@
     " Ignore line length
     let g:syntastic_python_flake8_args='--ignore=E501'
 
+    let g:syntastic_python_checkers=['flake8']
+
     " Disable the isort key combination, use the explicity ':Isort' instead
 "    let g:vim_isort_map = ''
 " }}}
