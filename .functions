@@ -47,6 +47,15 @@ stop() {
 
 
 #───────────────────────────────────────────────────────────────────────────────
+# restart: restart a systemd service unit and show it's status
+#───────────────────────────────────────────────────────────────────────────────
+restart() {
+    sudo systemctl restart "$@.service"
+    sudo systemctl status -a "$@.service"
+}
+
+
+#───────────────────────────────────────────────────────────────────────────────
 # has_virtualenv: if '.venv' exists, use it's content to activate a virtualenv
 #───────────────────────────────────────────────────────────────────────────────
 has_virtualenv() {
