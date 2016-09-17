@@ -28,6 +28,7 @@
     call vundle#begin()
     Plugin 'bps/vim-textobj-python'
     Plugin 'davidhalter/jedi-vim'
+    Plugin 'dhruvasagar/vim-table-mode'
     Plugin 'fisadev/vim-isort'
     Plugin 'flazz/vim-colorschemes'
     Plugin 'hail2u/vim-css3-syntax'
