@@ -26,10 +26,6 @@ alias cpu-temp='sensors | grep "Physical" | cut -c35-40'
 #───────────────────────────────────────────────────────────────────────────────
 alias reboot="systemctl reboot"
 alias find="sudo find"
-alias suspend="systemctl suspend"
-alias poweroff="sudo pacman -Syu && systemctl poweroff"
-alias shutdown="sudo pacman -Syu && poweroff"
-alias startx="sudo pacman -Syu && startx"
 
 
 #───────────────────────────────────────────────────────────────────────────────
