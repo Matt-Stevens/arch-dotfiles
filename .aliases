@@ -57,15 +57,12 @@ alias tree="tree --dirsfirst -Cha"
 #───────────────────────────────────────────────────────────────────────────────
 alias mute='amixer set Master mute'
 alias unmute='amixer set Master unmute'
-alias w="aria2c"
 alias psg="ps aux | grep "
 alias less='less -R'
-alias tf='tail -f'
 alias gz='tar -zcvf'
-alias ex='extract'
 alias grep='grep --color=always'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
-alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+
 # these last two should only exist if we're physically on the machine
 if ! [ -n "$SSH_CLIENT" ]; then
     alias vim='gvim'
