@@ -201,7 +201,7 @@
     nnoremap <silent> <F4> :set spell!<CR>
 
     " F5 strips trailing white space
-    nnoremap <silent> <F5> :StripWhitespace<CR>
+    nnoremap <silent> <F5> :%s/\s\+$//e<CR>
 
     " Reselect visual block after indent/outdent
     vnoremap < <gv
@@ -223,11 +223,6 @@
 
     " Allow saving of files as root
     cmap w!! w !sudo tee > /dev/null %
-" }}}
-
-" Auto commands {{{
-    " Remove trailing white space just before saving
-    autocmd BufWritePre * :StripWhitespace
 " }}}
 
 " Python {{{
