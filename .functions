@@ -32,8 +32,8 @@ single() {
 # start: start a systemd service unit and show it's status
 #───────────────────────────────────────────────────────────────────────────────
 start() {
-    systemctl start "$@.service"
-    systemctl status -a "$@.service"
+    sudo systemctl start "$@.service"
+    sudo systemctl status -a "$@.service"
 }
 
 
@@ -41,8 +41,8 @@ start() {
 # stop: stop a systemd service unit and show it's status
 #───────────────────────────────────────────────────────────────────────────────
 stop() {
-    systemctl stop "$@.service"
-    systemctl status -a "$@.service"
+    sudo systemctl stop "$@.service"
+    sudo systemctl status -a "$@.service"
 }
 
 
