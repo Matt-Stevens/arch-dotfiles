@@ -280,6 +280,30 @@ list-archive () {
 
 
 #───────────────────────────────────────────────────────────────────────────────
+# symmetric-encrypt: use a symmetric cipher to encrypt a file, output ASCII.
+#───────────────────────────────────────────────────────────────────────────────
+symmetric-encrypt () {
+    if [ -r "$1" ] ; then
+        gpg --armor --symmetric $1
+    else
+        echo "The file '$1' does not exist or is not readable."
+    fi
+}
+
+
+#───────────────────────────────────────────────────────────────────────────────
+# asymmetric-encrypt: use an asymmetric cipher to encrypt a file, output ASCII.
+#───────────────────────────────────────────────────────────────────────────────
+asymmetric-encrypt () {
+    if [ -r "$2" ] ; then
+        gpg --encrypt --recipient $1 --armor $2
+    else
+        echo "The file '$2' does not exist or is not readable."
+    fi
+}
+
+
+#───────────────────────────────────────────────────────────────────────────────
 # watch-polish: watch a Polish movie for Beata's mum.
 #───────────────────────────────────────────────────────────────────────────────
 watch-polish () {
