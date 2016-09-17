@@ -62,6 +62,7 @@ alias less='less -R'
 alias gz='tar -zcvf'
 alias grep='grep --color=always'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+alias ack='ack --pager="less -FRSX"'
 
 # these last two should only exist if we're physically on the machine
 if ! [ -n "$SSH_CLIENT" ]; then
