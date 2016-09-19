@@ -100,14 +100,10 @@ function mkd() {
 
 
 #───────────────────────────────────────────────────────────────────────────────
-# set_virtualenv: determine the active virtualenv's details
+# mkd: create a new directory and enter it
 #───────────────────────────────────────────────────────────────────────────────
-function set_virtualenv() {
-  if test -z "$VIRTUAL_ENV" ; then
-      PYTHON_VIRTUALENV=""
-  else
-      PYTHON_VIRTUALENV="${BLUE}[`basename \"$VIRTUAL_ENV\"`]$RESET "
-  fi
+function mkd() {
+	mkdir -p "$@" && cd "$@"
 }
 
 
