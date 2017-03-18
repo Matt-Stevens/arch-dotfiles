@@ -1,92 +1,51 @@
 #───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for torrents
+# Case-insensitive globbing (used in pathname expansion)
 #───────────────────────────────────────────────────────────────────────────────
-alias save-torrent="aria2c --bt-metadata-only --bt-save-metadata"
-alias get-torrent-list="aria2c --show-files"
-
-
-#───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for navigation
-#───────────────────────────────────────────────────────────────────────────────
-alias cd="venv_cd"
-alias ..="cd .."
-alias -- -="cd -"
+shopt -s nocaseglob
 
 
 #───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for stats
+# Autocorrect typos in path names when using `cd`
 #───────────────────────────────────────────────────────────────────────────────
-alias df='df -h'
-alias du='du -h -d 2'
-alias battery='acpi | cut -d " " -f3-'
-alias cpu-temp='sensors | grep "Physical" | cut -c35-40'
+shopt -s cdspell
 
 
 #───────────────────────────────────────────────────────────────────────────────
-# System shortcuts
+# Eternal bash history, shared across shells with no overwriting
 #───────────────────────────────────────────────────────────────────────────────
-alias :q="exit"
-alias reboot="systemctl reboot"
-alias find="sudo find"
-
-
-#───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for listing files and directories
-#───────────────────────────────────────────────────────────────────────────────
-alias ls="command ls --color"
-alias lsd='ls -l --color | grep "^d"'
-alias lh='ls -alt | head'
-alias ll='ls -lGh'
-alias tree="tree --dirsfirst -Cha"
+shopt -s histappend
+export HISTFILESIZE=
+export HISTSIZE=
+export HISTCONTROL=ignoreboth:ignoredups
+export HISTFILE=~/.bash_eternal_history
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+export HISTIGNORE="cd:pwd:exit:date:* --help"
 
 
 #───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for general tasks
+# Vim is the dog's bollocks, so make it the default editor
 #───────────────────────────────────────────────────────────────────────────────
-alias mute='amixer set Master mute'
-alias unmute='amixer set Master unmute'
-alias less='less -R'
-alias gz='tar -zcvf'
-alias grep='grep --color=always'
-alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
-alias clear-password-cache='gpgconf --reload gpg-agent'
-
-# the alias to `gvim` should only exist if we're physically on the machine in in X
-if ! { [ -n "$SSH_CLIENT" ] && [ -n "$DISPLAY" ]; }; then
-    alias vim='gvim'
-fi
+export EDITOR="vim"
 
 
 #───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for Git
+# Don't clear the screen after exiting a manual page
 #───────────────────────────────────────────────────────────────────────────────
-alias gd="git diff --no-prefix"
-alias gs="git status -sb"
-
-
-#───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for networking
-#───────────────────────────────────────────────────────────────────────────────
-alias remoteip="drill +short myip.opendns.com @resolver1.opendns.com | grep myip | tac | head -n 1 | cut -d '	' -f 5"
-alias localip="ifconfig | grep --color=never -oP 'inet (\d+\.){3}\d+' | head -n 1 | cut -d ' ' -f 2"
-alias whois="whois -h whois-servers.net"
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-alias ping="ping -D -O"
-
-# find all devices on the local network
-alias network_devices="nmap -sP $(localip)/24 | grep report | cut -d ' ' -f 5"
-
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-    alias "$method"="lwp-request -m '$method'"
-done
+export MANPAGER="less -X"
 
 
 #───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for diagnostics
+# Python settings
 #───────────────────────────────────────────────────────────────────────────────
-# trace all system calls that deal with files
-alias system_call_files="strace -e trace=file"
+export PYTHONWARNINGS="ignore"
+export PYTHONDONTWRITEBYTECODE=1
+
+
+#───────────────────────────────────────────────────────────────────────────────
+# Enable bash auto completion for git
+#───────────────────────────────────────────────────────────────────────────────
+git_completion_path="/usr/share/git/completion/git-completion.bash"
+[ -f "$git_completion_path" ] && . "$git_completion_path"
 
 
 # vim:ft=sh

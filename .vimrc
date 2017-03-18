@@ -3,91 +3,90 @@
 "    1. Download this file and save it to `~/.vimrc`
 "
 "    2. Install Vim
-"        $ pacman -S gvim-python3
+"        # pacman -S gvim
 "
-"    3. Install `python-powerline-git` from the AUR
+"    3. Install Python dependencies
+"        # pip install powerline-status flake8 isort
 "
-"    4. Install Vundle
-"        $ git clone http://git.io/b51VEw ~/.vim/bundle/Vundle.vim
+"    4. Install the `otf-inconsolata-powerline-git` AUR package
+"       $ cower -d otf-inconsolata-powerline-git
+"       $ cd otf-inconsolata-powerline-git
+"       $ makepkg -ris
+"       # pacman -U *.xz
 "
-"    5. Install Vundle plugins
-"        $ vim +PluginInstall +qall
+"   5. Install the `vim-plugged` Vim plugin
+"       $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "
+"   6. Install the Vim plugins
+"       $ vim +PlugInstall +qall
 
 " Essential {{{
-    set nocompatible            " Modernise
-    filetype off                " Required by Vundle
-    let mapleader = "\<Space>"  " Override mapleader
-" }}}
-
-" Runtime Paths {{{
-    set runtimepath+=~/.vim/bundle/Vundle.vim
+    set nocompatible               " Modernise
+    let mapleader = "\<Space>"     " Override mapleader
 " }}}
 
 " Plugins {{{
-    call vundle#begin()
-    Plugin 'bps/vim-textobj-python'
-    Plugin 'davidhalter/jedi-vim'
-    Plugin 'dhruvasagar/vim-table-mode'
-    Plugin 'fisadev/vim-isort'
-    Plugin 'flazz/vim-colorschemes'
-    Plugin 'hail2u/vim-css3-syntax'
-    Plugin 'jamessan/vim-gnupg'
-    Plugin 'kana/vim-textobj-user'
-    Plugin 'kien/ctrlp.vim'
-    Plugin 'Matt-Deacalion/vim-systemd-syntax'
-    Plugin 'mileszs/ack.vim'
-    Plugin 'ntpeters/vim-better-whitespace'
-    Plugin 'scrooloose/syntastic'
-    Plugin 'terryma/vim-expand-region'
-    Plugin 'tpope/vim-commentary'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'tpope/vim-repeat'
-    Plugin 'tpope/vim-speeddating'
-    Plugin 'tpope/vim-surround'
-    Plugin 'tpope/vim-unimpaired'
-    Plugin 'vim-scripts/restore_view.vim'
-    call vundle#end()
+    call plug#begin('~/.vim/plugged')
+    Plug 'bps/vim-textobj-python'
+    Plug 'davidhalter/jedi-vim'
+    Plug 'fisadev/vim-isort'
+    Plug 'flazz/vim-colorschemes'
+    Plug 'hail2u/vim-css3-syntax'
+    Plug 'jamessan/vim-gnupg'
+    Plug 'kana/vim-textobj-user'
+    Plug 'kien/ctrlp.vim'
+    Plug 'Matt-Deacalion/vim-systemd-syntax'
+    Plug 'mileszs/ack.vim'
+    Plug 'ntpeters/vim-better-whitespace'
+    Plug 'scrooloose/syntastic'
+    Plug 'terryma/vim-expand-region'
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-speeddating'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-unimpaired'
+    Plug 'vim-scripts/restore_view.vim'
+    call plug#end()
 " }}}
 
 " General {{{
-    syntax on                   " Syntax highlighting
-    filetype plugin indent on   " Enable detection of filetype
-    set wildmenu                " Menu completion in command mode on <Tab>
-    set noswapfile              " No messy swap files (this is also more secure)
-    set history=2000            " Remember more Ex-Commands
+    syntax on                      " Syntax highlighting
+    set wildmenu                   " Menu completion in command mode on <Tab>
+    set noswapfile                 " No messy swap files (this is also more secure)
+    set history=2000               " Remember more Ex-Commands
 
     " ignore
     set wildignore+=*.swp,*.bak,.git,*.jpg,*.gif,*.png,*.pyc,*.pdf,*.zip,*.gz
 " }}}
 
 " Appearance {{{
-    colorscheme Tomorrow-Night  " Other options: Monokai, Gotham, Chasing-Logic
-    set t_Co=256                " Enable full colour within the terminal
-    set colorcolumn=100         " Add a red line at 100 chars (not quite PEP 8, but it's 2014)
-    set cursorline              " Display a horizontal line at the cursor position
-    set laststatus=2            " Always show statusline, even if only a single window
-    set guioptions-=L           " Remove left scrollbar
-    set guioptions-=m           " Remove top menu
-    set guioptions-=r           " Remove scrollbar
-    set guioptions-=T           " Remove shortcut icons
-    set guifont=Inconsolata\ For\ Powerline\ Medium\ 14
+    colorscheme Tomorrow-Night     " Other options: Monokai, Gotham, Chasing-Logic
+    set t_Co=256                   " Enable full colour within the terminal
+    set colorcolumn=100            " Add a red line at 100 chars (not quite PEP 8, but it's 2017)
+    set cursorline                 " Display a horizontal line at the cursor position
+    set laststatus=2               " Always show statusline, even if only a single window
+    set guioptions-=L              " Remove left scrollbar
+    set guioptions-=m              " Remove top menu
+    set guioptions-=r              " Remove scrollbar
+    set guioptions-=T              " Remove shortcut icons
+    set guifont=Inconsolata\ For\ Powerline\ Medium\ 15
 " }}}
 
 " Searching {{{
-    set gdefault                " Assume the /g flag on :s substitutions
-    set hlsearch                " Highlight search matches
-    set ignorecase              " Default to using case insensitive searches,
-    set incsearch               " Incrementally search while typing a /regex
-    set smartcase               " Unless uppercase letters are used in the regex
-    set smarttab                " Handle tabs more intelligently
+    set gdefault                   " Assume the /g flag on :s substitutions
+    set hlsearch                   " Highlight search matches
+    set ignorecase                 " Default to using case insensitive searches,
+    set incsearch                  " Incrementally search while typing a /regex
+    set smartcase                  " Unless uppercase letters are used in the regex
+    set smarttab                   " Handle tabs more intelligently
 " }}}
 
 " Movement {{{
-    set relativenumber          " Relative line numbers
-    set number                  " Enable 'hybrid' line number mode
-    set scrolloff=5             " Begin scrolling before cursor hits the top/bottom
-    set sidescrolloff=20        " Begin scrolling before cursor hits the right hand side
+    set relativenumber             " Relative line numbers
+    set number                     " Enable 'hybrid' line number mode
+    set scrolloff=5                " Begin scrolling before cursor hits the top/bottom
+    set sidescrolloff=20           " Begin scrolling before cursor hits the right hand side
 " }}}
 
 " Git Commit Editing {{{
@@ -96,18 +95,19 @@
 " }}}
 
 " Editing {{{
-    set confirm                 " Y-N-C prompt if closing with unsaved changes
-    set expandtab               " Convert tabs to tabstop * spaces
-    set nowrap                  " Disable text wrapping
-    set shiftwidth=4            " How much to indent with '>>'
-    set softtabstop=4           " Should be the same as 'tabstop'
-    set spelllang=en_gb         " Set region to British English
-    set tabstop=4               " A tab is four spaces, not eight (the default)
+    set confirm                    " Y-N-C prompt if closing with unsaved changes
+    set expandtab                  " Convert tabs to tabstop * spaces
+    set nowrap                     " Disable text wrapping
+    set shiftwidth=4               " How much to indent with '>>'
+    set softtabstop=4              " Should be the same as 'tabstop'
+    set spelllang=en_gb            " Set region to British English
+    set spellfile=~/.en.utf-8.add  " Include my spellings
+    set tabstop=4                  " A tab is four spaces, not eight (the default)
 " }}}
 
 " Folding {{{
-    set foldmethod=indent       " Allow us to fold on indents
-    set foldlevelstart=20       " Don't fold by default
+    set foldmethod=indent          " Allow us to fold on indents
+    set foldlevelstart=20          " Don't fold by default
 
     " Fold Vim configuration files
     autocmd FileType vim setlocal foldmethod=marker
@@ -161,10 +161,6 @@
 
     " Quickly get out of insert mode
     inoremap jj <Esc>
-
-    " Expand region
-"    vmap v <Plug>(expand_region_expand)
-"    vmap <C-v> <Plug>(expand_region_shrink)
 
     " Improve movement on wrapped lines (when wrapping is enabled)
     nnoremap j gj
@@ -225,6 +221,12 @@
     cmap w!! w !sudo tee > /dev/null %
 " }}}
 
+" Powerline {{{
+    python3 from powerline.vim import setup as powerline_setup
+    python3 powerline_setup()
+    python3 del powerline_setup
+" }}}
+
 " Python {{{
     " Ignore line length
     let g:syntastic_python_flake8_args='--ignore=E501'
@@ -232,12 +234,7 @@
     let g:syntastic_python_checkers=['flake8']
 
     " Disable the isort key combination, use the explicity ':Isort' instead
-"    let g:vim_isort_map = ''
-" }}}
-"
-" Behaviour {{{
-    set noerrorbells            " Shut those bells up
-    set novisualbell            " The same goes for visual bells
+    let g:vim_isort_map = ''
 " }}}
 
 " Cursorline {{{
@@ -248,5 +245,6 @@
         autocmd VimEnter,WinEnter * set cursorline
     augroup END
 " }}}
+
 
 " vim:ft=vim

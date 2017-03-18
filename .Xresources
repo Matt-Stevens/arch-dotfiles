@@ -1,3 +1,41 @@
-dzen2.font:       -*-iceland-*-*-*--14-*-*-*-*-*-*-*
-dzen2.foreground: #666
-dzen2.background: #000
+! urxvt terminal
+! --------------
+URxvt.font:             xft:Inconsolata:size=15,xft:symbola:size=9
+URxvt.saveLines:        10000
+URxvt.scrollBar:        off
+URxvt.cursorBlink:      on
+URxvt.cursorUnderline:  on
+URxvt.jumpScroll:       on
+URxvt.termName:         xterm-256color
+
+! Jelly X theme
+! -------------
+URxvt.foreground:       #A8A8A8
+URxvt.background:       #000000
+URxvt.cursorColor:      #AA2255
+URxvt.color0:           #000000
+URxvt.color1:           #D75F5F
+URxvt.color2:           #00AF87
+URxvt.color3:           #AFD75F
+URxvt.color4:           #5FAFD7
+URxvt.color5:           #8787AF
+URxvt.color6:           #00AFD7
+URxvt.color7:           #FFFFFF
+URxvt.color8:           #0A0A0A
+URxvt.color9:           #D787AF
+URxvt.color10:          #5FAF5F
+URxvt.color11:          #D7AF5F
+URxvt.color12:          #87AfD7
+URxvt.color13:          #8787D7
+URxvt.color14:          #87AFFF
+URxvt.color15:          #FFFFFF
+
+
+! Text selection and browser launching
+!-------------------------------------
+URxvt.perl-ext-common:      default,url-select,keyboard-select
+URxvt.url-select.launcher:  /usr/bin/xdg-open
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search

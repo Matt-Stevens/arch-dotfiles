@@ -28,21 +28,6 @@ man() {
     man "$@"
 }
 
-#───────────────────────────────────────────────────────────────────────────────
-# dual: set X11 to use two monitors
-#───────────────────────────────────────────────────────────────────────────────
-dual() {
-    xrandr --output DVI-0 --primary --left-of DVI-1 --output DVI-1 --auto
-}
-
-
-#───────────────────────────────────────────────────────────────────────────────
-# single: set X11 to use one monitor
-#───────────────────────────────────────────────────────────────────────────────
-single() {
-    xrandr --output DVI-1 --off
-}
-
 
 #───────────────────────────────────────────────────────────────────────────────
 # start: start a systemd service unit and show it's status
@@ -183,16 +168,6 @@ function dataurl() {
 function server() {
 	local port="${1:-8000}"
 	python2 -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
-}
-
-
-#───────────────────────────────────────────────────────────────────────────────
-# phpserver: start a PHP server from a directory, optionally specifying the port
-#───────────────────────────────────────────────────────────────────────────────
-function phpserver() {
-	local port="${1:-4000}"
-	local ip=$(ipconfig getifaddr en1)
-	php -S "${ip}:${port}"
 }
 
 
@@ -377,5 +352,6 @@ git-play () {
 	esac
     done
 }
+
 
 # vim:ft=sh
