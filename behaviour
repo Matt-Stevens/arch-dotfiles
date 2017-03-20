@@ -14,12 +14,12 @@ shopt -s cdspell
 # Eternal bash history, shared across shells with no overwriting
 #───────────────────────────────────────────────────────────────────────────────
 shopt -s histappend
-export HISTFILESIZE=
-export HISTSIZE=
-export HISTCONTROL=ignoreboth:ignoredups
-export HISTFILE=~/.bash_eternal_history
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-export HISTIGNORE="cd:pwd:exit:date:* --help"
+HISTFILESIZE=
+HISTSIZE=
+HISTCONTROL=ignoreboth:ignoredups
+HISTFILE=~/.bash_eternal_history
+PROMPT_COMMAND="history -a; history -c; history -r; ${PROMPT_COMMAND}"
+HISTIGNORE="cd:pwd:exit:date:* --help"
 
 
 #───────────────────────────────────────────────────────────────────────────────
