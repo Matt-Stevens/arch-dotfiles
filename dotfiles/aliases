@@ -1,12 +1,12 @@
 #───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for torrents
+# Torrents
 #───────────────────────────────────────────────────────────────────────────────
 alias save-torrent="aria2c --bt-metadata-only --bt-save-metadata"
 alias get-torrent-list="aria2c --show-files"
 
 
 #───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for navigation
+# Navigation
 #───────────────────────────────────────────────────────────────────────────────
 alias cd="venv_cd"
 alias ..="cd .."
@@ -14,16 +14,14 @@ alias -- -="cd -"
 
 
 #───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for stats
+# Statistics
 #───────────────────────────────────────────────────────────────────────────────
-alias df='df -h'
-alias du='du -h -d 2'
-alias battery='acpi | cut -d " " -f3-'
-alias cpu-temp='sensors | grep "Physical" | cut -c35-40'
+alias df="df -h"
+alias du="du -h -d 2"
 
 
 #───────────────────────────────────────────────────────────────────────────────
-# System shortcuts
+# System
 #───────────────────────────────────────────────────────────────────────────────
 alias :q="exit"
 alias reboot="systemctl reboot"
@@ -31,57 +29,44 @@ alias find="sudo find"
 
 
 #───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for listing files and directories
+# File and directory information
 #───────────────────────────────────────────────────────────────────────────────
 alias ls="command ls --color"
-alias lsd='ls -l --color | grep "^d"'
-alias lh='ls -alt | head'
-alias ll='ls -lGh'
+alias lsd="ls -l --color | grep "^d""
+alias lh="ls -alt | head"
+alias ll="ls -lGh"
 alias tree="tree --dirsfirst -Cha"
 
 
 #───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for general tasks
+# General tasks
 #───────────────────────────────────────────────────────────────────────────────
-alias mute='amixer set Master mute'
-alias unmute='amixer set Master unmute'
-alias less='less -R'
-alias gz='tar -zcvf'
-alias grep='grep --color=always'
-alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
-alias clear-password-cache='gpgconf --reload gpg-agent'
+alias mute="amixer set Master mute"
+alias unmute="amixer set Master unmute"
+alias less="less -R"
+alias grep="grep --color=always"
+alias urlencode='python -c "import sys, urllib.parse as p; print(p.quote_plus(sys.argv[1]))"'
+alias clear-password-cache="gpgconf --reload gpg-agent"
 
 
 #───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for Git
+# Git
 #───────────────────────────────────────────────────────────────────────────────
 alias gd="git diff --no-prefix"
 alias gs="git status -sb"
 
 
 #───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for networking
+# Networking
 #───────────────────────────────────────────────────────────────────────────────
+alias net_devices="nmap -sn $(localip)/24 -oG - | grep Up | cut -d ' ' -f 2"
 alias remoteip="drill +short myip.opendns.com @resolver1.opendns.com | grep myip | tac | head -n 1 | cut -d '	' -f 5"
-alias localip="ifconfig | grep --color=never -oP 'inet (\d+\.){3}\d+' | head -n 1 | cut -d ' ' -f 2"
-alias whois="whois -h whois-servers.net"
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+alias localip="ip -4 route get 1 | head -1 | cut -d' ' -f7"
 alias ping="ping -D -O"
-
-# find all devices on the local network
-alias network_devices="nmap -sP $(localip)/24 | grep report | cut -d ' ' -f 5"
 
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
     alias "$method"="lwp-request -m '$method'"
 done
-
-
-#───────────────────────────────────────────────────────────────────────────────
-# Shortcuts for diagnostics
-#───────────────────────────────────────────────────────────────────────────────
-# trace all system calls that deal with files
-alias system_call_files="strace -e trace=file"
 
 
 # vim:ft=sh
