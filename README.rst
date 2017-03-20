@@ -7,18 +7,20 @@ are kept as sharp as possible by constant use and honing.
 
 + `Aliases`_ for networking, pacman, statistics etc.
 + `Functions`_ for controlling services, extracting/compressing files, encryption etc.
-+ A tidy `vimrc`_ ideal for Python development.
++ A slick `vimrc`_ ideal for Python development.
 
 Installation
 ------------
+This **will not** overwrite any of your existing dotfiles. It will tell you which conflicting files
+you have to move before re-trying the install again.
 
 .. code-block:: bash
 
-    $ git clone https://github.com/Matt-Deacalion/arch-dotfiles.git && cd arch-dotfiles && ./install.sh
+    $ curl -L https://git.io/vybNs | python -
 
 License
 -------
-Copyright © 2016 `Matt Deacalion Stevens`_, released under The `MIT License`_.
+Copyright © 2017 `Matt Deacalion Stevens`_, released under The `MIT License`_.
 
 .. _Aliases: https://github.com/Matt-Deacalion/arch-dotfiles/blob/master/.aliases
 .. _Functions: https://github.com/Matt-Deacalion/arch-dotfiles/blob/master/.functions
