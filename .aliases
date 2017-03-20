@@ -51,11 +51,6 @@ alias grep='grep --color=always'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 alias clear-password-cache='gpgconf --reload gpg-agent'
 
-# the alias to `gvim` should only exist if we're physically on the machine in in X
-if ! { [ -n "$SSH_CLIENT" ] && [ -n "$DISPLAY" ]; }; then
-    alias vim='gvim'
-fi
-
 
 #───────────────────────────────────────────────────────────────────────────────
 # Shortcuts for Git
