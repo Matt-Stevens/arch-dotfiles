@@ -16,7 +16,7 @@ you have to move before re-trying the install again.
 
 .. code-block:: bash
 
-    $ curl -L https://git.io/vybNs | python -
+    $ curl -L https://git.io/vybNs 2> /dev/null | python -
 
 License
 -------
