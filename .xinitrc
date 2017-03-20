@@ -31,5 +31,8 @@ compton -CGb --no-fading-openclose
 # Ultra-fast terminal startup
 urxvtd -q -f -o
 
+# Disable DPMS and prevent screen from blanking
+xset s off -dpms
+
 # Swanky, tiling window manager
 exec xmonad
