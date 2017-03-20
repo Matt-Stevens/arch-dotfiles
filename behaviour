@@ -25,14 +25,14 @@ HISTIGNORE="cd:pwd:exit:date:* --help"
 #───────────────────────────────────────────────────────────────────────────────
 # Vim is the dog's bollocks, so make it the default editor
 #───────────────────────────────────────────────────────────────────────────────
-export EDITOR="vim"
+EDITOR="vim"
 
 
 #───────────────────────────────────────────────────────────────────────────────
 # Python settings
 #───────────────────────────────────────────────────────────────────────────────
-export PYTHONWARNINGS="ignore"
-export PYTHONDONTWRITEBYTECODE=1
+PYTHONWARNINGS="ignore"
+PYTHONDONTWRITEBYTECODE=1
 
 
 #───────────────────────────────────────────────────────────────────────────────
