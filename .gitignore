@@ -5,5 +5,5 @@ Desktop.ini
 Thumbs.db
 
 # All xmonad files, except the config
-.xmonad/
-!.xmonad/xmonad.hs
+xmonad/
+!xmonad/xmonad.hs
