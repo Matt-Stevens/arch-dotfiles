@@ -8,7 +8,6 @@ alias get-torrent-list="aria2c --show-files"
 #───────────────────────────────────────────────────────────────────────────────
 # Navigation
 #───────────────────────────────────────────────────────────────────────────────
-alias cd="venv_cd"
 alias ..="cd .."
 alias -- -="cd -"
 
@@ -43,7 +42,7 @@ alias tree="tree --dirsfirst -Cha"
 #───────────────────────────────────────────────────────────────────────────────
 alias mute="amixer set Master mute"
 alias unmute="amixer set Master unmute"
-alias less="less -R"
+alias less="less -RIWNMJ"
 alias grep="grep --color=always"
 alias urlencode='python -c "import sys, urllib.parse as p; print(p.quote_plus(sys.argv[1]))"'
 alias clear-password-cache="gpgconf --reload gpg-agent"
@@ -59,9 +58,9 @@ alias gs="git status -sb"
 #───────────────────────────────────────────────────────────────────────────────
 # Networking
 #───────────────────────────────────────────────────────────────────────────────
+alias localip="ip -4 route get 1 | head -1 | cut -d' ' -f7"
 alias net_devices="nmap -sn $(localip)/24 -oG - | grep Up | cut -d ' ' -f 2"
 alias remoteip="drill +short myip.opendns.com @resolver1.opendns.com | grep myip | tac | head -n 1 | cut -d '	' -f 5"
-alias localip="ip -4 route get 1 | head -1 | cut -d' ' -f7"
 alias ping="ping -D -O"
 
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do

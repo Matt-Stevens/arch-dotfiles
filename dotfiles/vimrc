@@ -57,7 +57,7 @@
     set history=2000               " Remember more Ex-Commands
 
     " ignore
-    set wildignore+=*.swp,*.bak,.git,*.jpg,*.gif,*.png,*.pyc,*.pdf,*.zip,*.gz
+    set wildignore+=*.swp,*.bak,.git,*.jpg,*.gif,*.png,*.pyc,*.pdf,*.zip,*.gz,*.mkv,*.mp4,*.avi
 " }}}
 
 " Appearance {{{
