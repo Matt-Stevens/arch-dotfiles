@@ -59,7 +59,6 @@ alias gs="git status -sb"
 # Networking
 #───────────────────────────────────────────────────────────────────────────────
 alias localip="ip -4 route get 1 | head -1 | cut -d' ' -f7"
-alias net_devices="nmap -sn $(localip)/24 -oG - | grep Up | cut -d ' ' -f 2"
 alias remoteip="drill +short myip.opendns.com @resolver1.opendns.com | grep myip | tac | head -n 1 | cut -d '	' -f 5"
 alias ping="ping -D -O"
 
