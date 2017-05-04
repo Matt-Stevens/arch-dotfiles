@@ -27,7 +27,6 @@
 
 " Plugins {{{
     call plug#begin('~/.vim/plugged')
-    Plug 'bps/vim-textobj-python'
     Plug 'davidhalter/jedi-vim'
     Plug 'fisadev/vim-isort'
     Plug 'flazz/vim-colorschemes'
