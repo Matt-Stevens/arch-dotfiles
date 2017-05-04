@@ -18,7 +18,7 @@ HISTFILESIZE=
 HISTSIZE=
 HISTCONTROL=ignoreboth:ignoredups
 HISTFILE=~/.bash_eternal_history
-PROMPT_COMMAND="history -a; history -c; history -r; ${PROMPT_COMMAND}"
+PROMPT_COMMAND="history -a; ${PROMPT_COMMAND}"
 HISTIGNORE="cd:pwd:exit:date:* --help"
 
 
