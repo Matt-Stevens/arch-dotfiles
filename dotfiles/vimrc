@@ -54,6 +54,7 @@
     set wildmenu                   " Menu completion in command mode on <Tab>
     set noswapfile                 " No messy swap files (this is also more secure)
     set history=2000               " Remember more Ex-Commands
+    set lazyredraw                 " Only redraw the screen when necessary
 
     " ignore
     set wildignore+=*.swp,*.bak,.git,*.jpg,*.gif,*.png,*.pyc,*.pdf,*.zip,*.gz,*.mkv,*.mp4,*.avi
