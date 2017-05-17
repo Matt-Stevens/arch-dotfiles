@@ -21,7 +21,6 @@
 "       $ vim +PlugInstall +qall
 
 " Essential {{{
-    set nocompatible               " Modernise
     let mapleader = "\<Space>"     " Override mapleader
 " }}}
 
