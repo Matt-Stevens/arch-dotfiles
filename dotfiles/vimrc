@@ -237,6 +237,9 @@
 
     " Disable the isort key combination, use the explicity ':Isort' instead
     let g:vim_isort_map = ''
+
+    " Specify to use the `isort` installed under Python 3
+    let g:vim_isort_python_version = 'python3'
 " }}}
 
 " Cursorline {{{
