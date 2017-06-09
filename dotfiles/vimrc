@@ -44,6 +44,7 @@
     Plug 'tpope/vim-speeddating'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-unimpaired'
+    Plug 'zhou13/vim-easyescape'
     call plug#end()
 " }}}
 
@@ -158,7 +159,10 @@
     nnoremap <silent> p p`]
 
     " Quickly get out of insert mode
-    inoremap jj <Esc>
+    let g:easyescape_chars = {'j': 1, 'k': 1}
+    let g:easyescape_timeout = 100
+    cnoremap jk <ESC>
+    cnoremap kj <ESC>
 
     " Improve movement on wrapped lines (when wrapping is enabled)
     nnoremap j gj
