@@ -34,7 +34,7 @@ alias ls="command ls --color -h"
 alias lsd="ls -l --color | grep "^d""
 alias lh="ls -alt | head"
 alias ll="ls -lGh"
-alias tree="tree --dirsfirst -Cha"
+alias tree="tree --dirsfirst -Cha -I .git"
 
 
 #───────────────────────────────────────────────────────────────────────────────
