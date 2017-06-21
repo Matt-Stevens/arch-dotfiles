@@ -208,6 +208,17 @@ print((date(*event) - today).days)
 EOF
 }
 
+#───────────────────────────────────────────────────────────────────────────────
+# quote: returns a random quote from `~/.quotes.txt'
+#───────────────────────────────────────────────────────────────────────────────
+quote () {
+python - <<EOF
+import os
+from random import choice
+print(choice([q.strip() for q in open(os.path.expanduser('~/.quotes.txt')).read().split('\n\n')]))
+EOF
+}
+
 
 #───────────────────────────────────────────────────────────────────────────────
 # git-play: a ‘Read-eval-print-loop’ shell to quickly setup various scenarios in
