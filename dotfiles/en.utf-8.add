@@ -39,6 +39,7 @@ javascript
 js
 jshint
 json
+kata
 livereload
 lodash
 mapleader
@@ -46,6 +47,8 @@ memcached
 menubar
 microservice
 microservices
+mindmap
+mindmapping
 neobundle
 nerdtree
 nginx
@@ -60,6 +63,8 @@ php
 plugin
 plugins
 png
+pomodoro
+pomodoros
 postgresql
 redis
 refactor
@@ -85,6 +90,7 @@ util
 vim
 vivagraphjs
 vps
+watchlist
 webgl
 webkit
 wiki
