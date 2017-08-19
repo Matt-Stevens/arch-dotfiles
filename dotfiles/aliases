@@ -40,12 +40,17 @@ alias tree="tree --dirsfirst -Cha -I .git"
 #───────────────────────────────────────────────────────────────────────────────
 # General tasks
 #───────────────────────────────────────────────────────────────────────────────
-alias mute="amixer set Master mute"
-alias unmute="amixer set Master unmute"
-alias less="less -RIWNMJ"
+alias ag="ag --pager='less -XFR'"
+alias vim="echo 'Use v instead'"
+alias ranger="echo 'Use r instead'"
+alias clear="echo 'Use CTRL+l instead'"
 alias grep="grep --color=always"
 alias urlencode='python -c "import sys, urllib.parse as p; print(p.quote_plus(sys.argv[1]))"'
 alias clear-password-cache="gpgconf --reload gpg-agent"
+alias v="gvim -ON"
+alias r="/usr/bin/ranger"
+alias p="/usr/bin/clear && python"
+alias m="/usr/bin/clear && r ~/media/music"
 
 
 #───────────────────────────────────────────────────────────────────────────────
