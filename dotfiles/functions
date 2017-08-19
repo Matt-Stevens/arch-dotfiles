@@ -2,7 +2,7 @@
 # stopwatch: counts time until `q` is pressed.
 #───────────────────────────────────────────────────────────────────────────────
 stopwatch () {
-    clear && utimer -s
+    /usr/bin/clear && utimer -s
 }
 
 
