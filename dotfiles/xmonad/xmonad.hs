@@ -62,11 +62,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
-    -- launch browser
-    , ((modm,               xK_s     ), spawn "firefox")
-
     -- launch firefox developer edition browser
-    , ((modm,               xK_d     ), spawn "firefox-developer")
+    , ((modm,               xK_s     ), spawn "firefox-developer")
 
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
