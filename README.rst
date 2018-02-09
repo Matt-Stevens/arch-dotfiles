@@ -20,7 +20,7 @@ you have to move before re-trying the install again.
 
 License
 -------
-Copyright © 2017 `Matt Deacalion Stevens`_, released under The `MIT License`_.
+Copyright © 2018 `Matt Deacalion Stevens`_, released under The `MIT License`_.
 
 .. _Aliases: https://github.com/Matt-Deacalion/arch-dotfiles/blob/master/.aliases
 .. _Functions: https://github.com/Matt-Deacalion/arch-dotfiles/blob/master/.functions
