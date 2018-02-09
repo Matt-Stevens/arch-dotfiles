@@ -1,6 +1,6 @@
 ! urxvt terminal
 ! --------------
-URxvt.font:             xft:Inconsolata:size=15
+URxvt.font:             xft:Inconsolata:size=15,xft:symbola:size=9
 URxvt.saveLines:        10000
 URxvt.scrollBar:        off
 URxvt.cursorBlink:      on
