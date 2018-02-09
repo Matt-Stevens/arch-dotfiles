@@ -38,7 +38,7 @@ RANGER_LOAD_DEFAULT_RC="FALSE"
 # Python settings
 #───────────────────────────────────────────────────────────────────────────────
 PYTHONWARNINGS="ignore"
-PYTHONDONTWRITEBYTECODE=1
+export PYTHONDONTWRITEBYTECODE=1
 
 
 #───────────────────────────────────────────────────────────────────────────────
