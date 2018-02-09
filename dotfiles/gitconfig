@@ -1,6 +1,7 @@
 [user]
     email = matt@dirtymonkey.co.uk
-    name  = Matt Deacalion Stevens
+    name = Matt Deacalion Stevens
+    signingkey = 99263B3169B149E8
 
 [alias]
     br = branch
