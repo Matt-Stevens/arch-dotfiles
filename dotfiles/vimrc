@@ -26,6 +26,7 @@
 
 " Plugins {{{
     call plug#begin('~/.vim/plugged')
+    Plug 'bronson/vim-visual-star-search'
     Plug 'davidhalter/jedi-vim'
     Plug 'fisadev/vim-isort'
     Plug 'flazz/vim-colorschemes'
@@ -44,6 +45,7 @@
     Plug 'tpope/vim-speeddating'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-unimpaired'
+    Plug 'Valloric/MatchTagAlways'
     Plug 'zhou13/vim-easyescape'
     call plug#end()
 " }}}
