@@ -104,6 +104,7 @@
     set spelllang=en_gb            " Set region to British English
     set spellfile=~/.en.utf-8.add  " Include my spellings
     set tabstop=4                  " A tab is four spaces, not eight (the default)
+    set clipboard=unnamedplus      " Use the clipboard as the default register
 " }}}
 
 " Folding {{{
