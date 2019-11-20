@@ -35,6 +35,7 @@ alias find="sudo find"
 #───────────────────────────────────────────────────────────────────────────────
 # File and directory information
 #───────────────────────────────────────────────────────────────────────────────
+alias rm="rm -Irv"
 alias ls="command ls --color -h"
 alias lsd="ls -l --color | grep "^d""
 alias lh="ls -alt | head"
