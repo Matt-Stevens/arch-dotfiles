@@ -81,6 +81,9 @@
     set incsearch                  " Incrementally search while typing a /regex
     set smartcase                  " Unless uppercase letters are used in the regex
     set smarttab                   " Handle tabs more intelligently
+
+    " speed up file search. Obeys `.gitignore` and searched untracked files
+    let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co']
 " }}}
 
 " Movement {{{
