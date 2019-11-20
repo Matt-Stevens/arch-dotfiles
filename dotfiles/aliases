@@ -45,6 +45,7 @@ alias tree="tree --dirsfirst -Cha -I .git"
 #───────────────────────────────────────────────────────────────────────────────
 # General tasks
 #───────────────────────────────────────────────────────────────────────────────
+alias haiku="fortune issa-haiku"
 alias ag="ag --pager='less -XFR'"
 alias vim="echo 'Use v instead'"
 alias ranger="echo 'Use r instead'"
