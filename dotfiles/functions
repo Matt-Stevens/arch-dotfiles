@@ -212,7 +212,7 @@ EOF
 # quote: returns a random quote from `~/.quotes.txt'
 #───────────────────────────────────────────────────────────────────────────────
 quote () {
-python - <<EOF
+python - <<EOF | cowsay -f moose | lolcat
 import os
 from random import choice
 print(choice([q.strip() for q in open(os.path.expanduser('~/.quotes.txt')).read().split('\n\n')]))
