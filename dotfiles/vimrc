@@ -62,7 +62,7 @@
 " }}}
 
 " Appearance {{{
-    colorscheme Tomorrow-Night     " Other options: Monokai, Gotham, Chasing-Logic
+    colorscheme nord               " Other options: Monokai, Gotham, Chasing-Logic
     set t_Co=256                   " Enable full colour within the terminal
     set colorcolumn=72             " Add a red line at 72 chars
     set cursorline                 " Display a horizontal line at the cursor position
@@ -71,7 +71,7 @@
     set guioptions-=m              " Remove top menu
     set guioptions-=r              " Remove scrollbar
     set guioptions-=T              " Remove shortcut icons
-    set guifont=Inconsolata\ For\ Powerline\ Medium\ 15
+    set guifont=Inconsolata\ For\ Powerline\ Medium\ 16
 " }}}
 
 " Searching {{{
