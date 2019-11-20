@@ -34,5 +34,8 @@ urxvtd -q -f -o
 # Disable DPMS and prevent screen from blanking
 xset s off -dpms
 
+# Hide cursor while typing
+xbanish &
+
 # Swanky, tiling window manager
 exec xmonad
