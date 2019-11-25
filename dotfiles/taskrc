@@ -1,0 +1,13 @@
+# Taskwarrior configuration
+
+data.location=~/.task
+column.padding=5
+search.case.sensitive=no
+weekstart=monday
+nag=Was working on that task a wise choice?
+
+include /usr/share/doc/task/rc/dark-blue-256.theme
+
+context.work=+work
+context.home=+home
+context=home
