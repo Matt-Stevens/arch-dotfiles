@@ -8,9 +8,9 @@
 "    3. Install Python dependencies
 "        # pip install powerline-status flake8 isort
 "
-"    4. Install the `otf-inconsolata-powerline-git` AUR package
-"       $ cower -d otf-inconsolata-powerline-git
-"       $ cd otf-inconsolata-powerline-git
+"    4. Install the `powerline-fonts-git` AUR package
+"       $ cower -d powerline-fonts-git
+"       $ cd powerline-fonts-git
 "       $ makepkg -ris
 "       # pacman -U *.xz
 "
@@ -19,6 +19,7 @@
 "
 "   6. Install the Vim plugins
 "       $ vim +PlugInstall +qall
+
 
 " Essential {{{
     let mapleader = "\<Space>"     " Override mapleader
