@@ -7,7 +7,7 @@ are kept as sharp as possible by constant use and honing.
 
 + `Aliases`_ for networking, pacman, statistics etc.
 + `Functions`_ for controlling services, extracting/compressing files, encryption etc.
-+ A slick `vimrc`_ ideal for Python development.
++ A slick `vimrc`_ ideal for Python and Vue.js development.
 
 Installation
 ------------
@@ -22,8 +22,8 @@ License
 -------
 Copyright © 2020 `Matt Deacalion Stevens`_, released under The `MIT License`_.
 
-.. _Aliases: https://github.com/Matt-Deacalion/arch-dotfiles/blob/master/.aliases
-.. _Functions: https://github.com/Matt-Deacalion/arch-dotfiles/blob/master/.functions
-.. _vimrc: https://github.com/Matt-Deacalion/arch-dotfiles/blob/master/.vimrc
-.. _Matt Deacalion Stevens: http://dirtymonkey.co.uk
-.. _MIT License: http://deacalion.mit-license.org
+.. _Aliases: https://github.com/Matt-Deacalion/arch-dotfiles/blob/master/dotfiles/aliases
+.. _Functions: https://github.com/Matt-Deacalion/arch-dotfiles/blob/master/dotfiles/functions
+.. _vimrc: https://github.com/Matt-Deacalion/arch-dotfiles/blob/master/dotfiles/vimrc
+.. _Matt Deacalion Stevens: https://dirtymonkey.co.uk
+.. _MIT License: https://deacalion.mit-license.org
