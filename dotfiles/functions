@@ -1,4 +1,15 @@
 #───────────────────────────────────────────────────────────────────────────────
+# clean-history: remove duplicates from bash history while preserving order
+#
+# credit: https://unix.stackexchange.com/a/78846/70343
+#───────────────────────────────────────────────────────────────────────────────
+clean-history () {
+    tac $HISTFILE | awk '!x[$0]++' | tac > ~/.tmp_history
+    mv ~/.tmp_history $HISTFILE
+}
+
+
+#───────────────────────────────────────────────────────────────────────────────
 # stopwatch: counts time until `q` is pressed.
 #───────────────────────────────────────────────────────────────────────────────
 stopwatch () {
