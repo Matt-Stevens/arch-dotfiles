@@ -40,5 +40,8 @@ xset b off
 # Hide cursor while typing
 xbanish &
 
+# Notification daemon
+twmnd &
+
 # Swanky, tiling window manager
 exec xmonad
