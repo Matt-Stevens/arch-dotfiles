@@ -33,9 +33,9 @@ URxvt.color15:          #FFFFFF
 
 ! Text selection and browser launching
 !-------------------------------------
-URxvt.perl-ext-common:      default,url-select,keyboard-select
-URxvt.url-select.launcher:  /usr/bin/xdg-open
-URxvt.url-select.underline: true
-URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.perl-ext-common:      default,keyboard-select,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
