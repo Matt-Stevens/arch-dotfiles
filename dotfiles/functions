@@ -1,4 +1,12 @@
 #───────────────────────────────────────────────────────────────────────────────
+# cd: when I change directories, remind my misguided mind what it was doing.
+#───────────────────────────────────────────────────────────────────────────────
+cd () {
+    builtin cd $1 && [[ -f .quick-commence.txt ]] && cat .quick-commence.txt
+}
+
+
+#───────────────────────────────────────────────────────────────────────────────
 # mv: if you call mv without the second parameter it will prompt you to edit the
 # filename on command line. Original mv is called when it's called with more
 # than one argument. It's useful when you want to change just a few letters in a
