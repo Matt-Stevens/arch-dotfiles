@@ -58,6 +58,7 @@ alias v="gvim -ON"
 alias r="/usr/bin/ranger"
 alias p="/usr/bin/clear && python"
 alias m="/usr/bin/clear && r ~/media/music"
+alias cat="bat"
 
 
 #───────────────────────────────────────────────────────────────────────────────
