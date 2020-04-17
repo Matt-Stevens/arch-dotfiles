@@ -26,7 +26,7 @@ xsetroot -cursor_name left_ptr
 feh --no-fehbg --bg-scale ~/media/images/wallpaper-1.jpg ~/media/images/wallpaper-1.jpg
 
 # Tear free beauty
-compton -CGb --no-fading-openclose
+compton -CGb -D 0
 
 # Ultra-fast terminal startup
 urxvtd -q -f -o
