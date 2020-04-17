@@ -1,4 +1,23 @@
 #───────────────────────────────────────────────────────────────────────────────
+# mv: if you call mv without the second parameter it will prompt you to edit the
+# filename on command line. Original mv is called when it's called with more
+# than one argument. It's useful when you want to change just a few letters in a
+# long name.
+#
+# Credit: https://gist.github.com/premek
+#───────────────────────────────────────────────────────────────────────────────
+function mv() {
+    if [ "$#" -ne 1 ] || [ ! -e "$1" ]; then
+        command mv "$@"
+        return
+    fi
+
+    read -ei "$1" newfilename
+    command mv -v -- "$1" "$newfilename"
+}
+
+
+#───────────────────────────────────────────────────────────────────────────────
 # clean-history: remove duplicates from bash history while preserving order
 #
 # credit: https://unix.stackexchange.com/a/78846/70343
