@@ -29,6 +29,7 @@
     call plug#begin('~/.vim/plugged')
     Plug 'bronson/vim-visual-star-search'
     Plug 'davidhalter/jedi-vim'
+    Plug 'easymotion/vim-easymotion'
     Plug 'fisadev/vim-isort'
     Plug 'flazz/vim-colorschemes'
     Plug 'hail2u/vim-css3-syntax'
@@ -94,6 +95,12 @@
     set number                     " Enable 'hybrid' line number mode
     set scrolloff=5                " Begin scrolling before cursor hits the top/bottom
     set sidescrolloff=20           " Begin scrolling before cursor hits the right hand side
+
+    " EasyMotion plugin
+    let g:EasyMotion_do_mapping = 0 " Disable default mappings
+    map <Leader> <Plug>(easymotion-prefix)
+    map <Space>j <Plug>(easymotion-overwin-w)
+    map <Space>f <Plug>(easymotion-overwin-f)
 " }}}
 
 " Git Commit Editing {{{
