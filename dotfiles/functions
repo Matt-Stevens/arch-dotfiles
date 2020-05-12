@@ -68,6 +68,13 @@ clean-history () {
     mv ~/.tmp_history $HISTFILE
 }
 
+#───────────────────────────────────────────────────────────────────────────────
+# lh: list the 20 most recently updated files in a directory
+#───────────────────────────────────────────────────────────────────────────────
+lh () {
+    DEFAULT="."
+    ls -alt ${1-$DEFAULT} | head -n 21  # 20 + 1 (the `total` header)
+}
 
 #───────────────────────────────────────────────────────────────────────────────
 # rename-hash: xxx.txt -> hash-23d8det.txt
