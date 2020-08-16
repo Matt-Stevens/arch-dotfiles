@@ -47,6 +47,7 @@ alias t="exa -T --git-ignore --group-directories-first --long"
 # General tasks
 #───────────────────────────────────────────────────────────────────────────────
 alias npm="pnpm"
+alias extract="dtrx"
 alias haiku="fortune issa-haiku"
 alias ag="ag --pager='less -XFR'"
 alias vim="echo 'Use v instead'"
