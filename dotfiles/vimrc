@@ -113,7 +113,10 @@
     map <Space>f <Plug>(easymotion-overwin-f)
 " }}}
 
-" Git Commit Editing {{{
+" Git {{{
+    set signcolumn=yes             " Always show the gutter (prevents jumping)
+    set updatetime=100             " Fast git gutter updates
+
     " Add a red line at 72 chars, keeping commit messages short n' sweet and turn on spellcheck.
     autocmd FileType gitcommit setlocal textwidth=72 colorcolumn=72 spell
 " }}}
