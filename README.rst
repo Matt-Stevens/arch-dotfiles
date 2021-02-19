@@ -2,17 +2,20 @@
 Solid Arch Dotfiles
 ===================
 
-A set of elegant dotfiles in the spirit of Arch Linux that will give you a development boon. These
-are kept as sharp as possible by constant use and honing.
+A set of elegant dotfiles in the spirit of Arch Linux that will give
+you a development boon. These are kept as sharp as possible by constant
+use and honing.
 
++ A slick `vimrc`_ ideal for Python, Django and Vue.js development.
 + `Aliases`_ for networking, pacman, statistics etc.
 + `Functions`_ for controlling services, extracting/compressing files, encryption etc.
-+ A slick `vimrc`_ ideal for Python and Vue.js development.
+
 
 Installation
 ------------
-This **will not** overwrite any of your existing dotfiles. It will tell you which conflicting files
-you have to move before re-trying the install again.
+This **will not** overwrite any of your existing dotfiles. It will tell
+you which conflicting files you have to move before re-trying the
+install again.
 
 .. code-block:: bash
 
@@ -20,7 +23,7 @@ you have to move before re-trying the install again.
 
 License
 -------
-Copyright © 2020 `Matt Deacalion Stevens`_, released under The `MIT License`_.
+Copyright © 2021 `Matt Deacalion Stevens`_, released under The `MIT License`_.
 
 .. _Aliases: https://github.com/Matt-Deacalion/arch-dotfiles/blob/master/dotfiles/aliases
 .. _Functions: https://github.com/Matt-Deacalion/arch-dotfiles/blob/master/dotfiles/functions
