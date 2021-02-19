@@ -19,6 +19,12 @@
 "
 "   6. Install the Vim plugins
 "       $ vim +PlugInstall +qall
+"
+"
+" Keymap
+" ---------------------------------------------------------------------
+"  Ctrl+P       Find files
+"  <jk>         Escape
 
 
 " Essential {{{
