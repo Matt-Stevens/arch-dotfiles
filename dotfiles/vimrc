@@ -278,7 +278,7 @@
 " }}}
 
 " Vue {{{
-    let g:vue_pre_processors = ['scss']
+    let g:vue_pre_processors = ['sass']
 " }}}
 
 " Cursorline {{{
