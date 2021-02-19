@@ -23,8 +23,10 @@
 "
 " Keymap
 " ---------------------------------------------------------------------
-"  Ctrl+P       Find files
+"  <Ctrl-p>     Find files
 "  <jk>         Escape
+"  Space-j      Easy motion
+"  gcc          Comment / Uncomment line or visual selection
 
 
 " Essential {{{
@@ -110,7 +112,6 @@
     let g:EasyMotion_do_mapping = 0 " Disable default mappings
     map <Leader> <Plug>(easymotion-prefix)
     map <Space>j <Plug>(easymotion-bd-w)
-    map <Space>f <Plug>(easymotion-s)
 " }}}
 
 " Git {{{
