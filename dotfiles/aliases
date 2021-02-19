@@ -57,7 +57,7 @@ alias grep="grep --color=always"
 alias urlencode='python -c "import sys, urllib.parse as p; print(p.quote_plus(sys.argv[1]))"'
 alias clear-password-cache="gpgconf --reload gpg-agent"
 alias v="gvim -ON"
-alias r="/usr/bin/ranger"
+alias r="~/.local/bin/ranger"
 alias p="/usr/bin/clear && python"
 alias m="/usr/bin/clear && r ~/media/music"
 alias cat="bat"
