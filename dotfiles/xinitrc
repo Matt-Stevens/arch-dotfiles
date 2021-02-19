@@ -40,6 +40,9 @@ xset b off
 # Hide cursor while typing
 xbanish &
 
+# Clipboard manager
+clipmenud &
+
 # Notification daemon
 twmnd &
 
