@@ -27,8 +27,8 @@
     editor = gvim -f -c ':normal gg'
 
 [pager]
-    diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
-    show = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
+    diff = diff-so-fancy | less --tabs=4 -RFX
+    show = diff-so-fancy | less --tabs=4 -RFX
 
 [color]
     ui = true
@@ -46,3 +46,5 @@
     old = "red bold"
     new = "green bold"
     whitespace = "red reverse"
+[pull]
+	rebase = true
