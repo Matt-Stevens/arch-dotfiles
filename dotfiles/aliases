@@ -68,6 +68,7 @@ alias cat="bat"
 #───────────────────────────────────────────────────────────────────────────────
 alias gd="git diff --no-prefix"
 alias gs="git status -sb"
+alias multipull="fd . --exact-depth 1 --type d --exec git -C {} pull"
 
 
 #───────────────────────────────────────────────────────────────────────────────
